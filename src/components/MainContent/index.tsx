@@ -1,7 +1,7 @@
 import Card from "../Card";
 
 interface IMainContentProps {
-  items: { name: string; address: string; rating: number }[];
+  items: { name: string; address: string; rating: 0 | 1 | 2 | 3 | 4 | 5 }[];
 }
 
 const MainContent = ({ items }: IMainContentProps) => {

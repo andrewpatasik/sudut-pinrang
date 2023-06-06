@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <nav>
+    <nav className="my-2">
       <ul className="flex space-x-2 justify-start">
         <li>Home</li>
         <li>Daftar</li>

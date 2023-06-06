@@ -1,17 +1,19 @@
+import RatingCount from "./RatingCount";
+
 interface CardProps {
   item: {
     name: string;
     address: string;
-    rating: number;
+    rating: 0 | 1 | 2 | 3 | 4 | 5;
   };
 }
 
 const Card = ({ item }: CardProps) => {
   return (
     <div className="flex flex-col">
-      <div className="flex space-x-2">
+      <div className="flex space-x-1 justify-between">
         <h1>{item.name}</h1>
-        <span>{item.rating}</span>
+        <RatingCount ratingCount={item.rating} />
       </div>
       <p>{item.address}</p>
     </div>

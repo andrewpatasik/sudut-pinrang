@@ -16,7 +16,7 @@ export default function handler(
     {
       name: "RM. Ulu Bale",
       address: "Jalan Baru No.1 Pinrang",
-      rating: 5,
+      rating: 4,
     },
   ]);
 }

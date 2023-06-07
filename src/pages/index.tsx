@@ -3,7 +3,7 @@ import Head from "next/head";
 
 export default function Home({ items }: any) {
   return (
-    <main className="mt-6 mb-24">
+    <main className="grow mt-6 mb-24">
       <Head>
         <title>
           Kurasi Tempat Nongkrong Seru di Bumi Lasinrang | SUDUT PINRANG

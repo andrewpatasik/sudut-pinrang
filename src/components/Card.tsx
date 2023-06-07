@@ -10,7 +10,7 @@ interface CardProps {
 
 const Card = ({ item }: CardProps) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col my-4">
       <div className="flex space-x-1 justify-between">
         <h1>{item.name}</h1>
         <RatingCount ratingCount={item.rating} />

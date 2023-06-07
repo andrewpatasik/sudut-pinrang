@@ -18,7 +18,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+        <hr className="mt-2 mb-6 border-gray-200 sm:mx-auto" />
         <span className="block text-sm text-gray-500 sm:text-center">
           Made with ❤️ by andrewpatasik
         </span>

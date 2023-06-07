@@ -7,7 +7,7 @@ interface IMainContentProps {
 const MainContent = ({ items }: IMainContentProps) => {
   const renderMainContentCard = () => {
     if (Array.isArray(items) && items.length < 1) {
-      return <div>No data found.</div>;
+      return <div className="mx-auto">Belum ada data.</div>;
     }
 
     return items.map((item, index) => <Card key={index} item={item} />);

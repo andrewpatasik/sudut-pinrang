@@ -1,10 +1,10 @@
 const Navbar = () => {
   return (
-    <nav className="my-4">
-      <ul className="flex justify-start">
-        <li className="mr-2 px-2 border border-gray-700">Home</li>
-        <li className="px-2 border border-gray-700">Daftar</li>
-        <li className="ml-auto px-2 border border-gray-700">Tentang Kami</li>
+    <nav className="my-2 bg-gray-200 text-gray-400">
+      <ul className="flex justify-start py-2 px-3">
+        <li className="mr-4">Home</li>
+        <li>Daftar</li>
+        <li className="ml-auto">Tentang Kami</li>
       </ul>
     </nav>
   );

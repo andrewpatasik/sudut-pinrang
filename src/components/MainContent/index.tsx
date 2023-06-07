@@ -13,7 +13,7 @@ const MainContent = ({ items }: IMainContentProps) => {
     return items.map((item, index) => <Card key={index} item={item} />);
   };
 
-  return <div className="flex flex-col">{renderMainContentCard()}</div>;
+  return <div className="flex flex-col grow">{renderMainContentCard()}</div>;
 };
 
 export default MainContent;

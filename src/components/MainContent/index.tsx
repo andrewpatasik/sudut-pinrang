@@ -1,13 +1,13 @@
 import Card from "../Card";
 
 interface IMainContentProps {
-  items: { name: string; address: string; rating: 0 | 1 | 2 | 3 | 4 | 5 }[];
+  items: { name: string; address: string; rating: string }[];
 }
 
 const MainContent = ({ items }: IMainContentProps) => {
   const renderMainContentCard = () => {
     if (Array.isArray(items) && items.length < 1) {
-      return <div className="mx-auto">Belum ada data.</div>;
+      return <div>Belum ada data.</div>;
     }
 
     return items.map((item, index) => <Card key={index} item={item} />);

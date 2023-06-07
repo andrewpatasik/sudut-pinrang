@@ -2,7 +2,7 @@ import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 
 interface IRatingCountProps {
-  ratingCount: 0 | 1 | 2 | 3 | 4 | 5;
+  ratingCount: number;
 }
 
 const RatingCount = ({ ratingCount }: IRatingCountProps) => {

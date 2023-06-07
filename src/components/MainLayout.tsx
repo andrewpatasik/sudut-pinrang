@@ -12,7 +12,7 @@ const DM_MONO = DM_Mono({ subsets: ["latin"], weight: ["500", "400"] });
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <div className={`flex min-h-screen flex-col lg:max-w-xl mx-auto ${DM_MONO.className}`}>
+    <div className={`flex min-h-screen flex-col px-24 lg:p-0 lg:max-w-xl lg:mx-auto ${DM_MONO.className}`}>
       <Heading />
       <Navbar />
       {children}

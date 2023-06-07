@@ -4,7 +4,7 @@ interface CardProps {
   item: {
     name: string;
     address: string;
-    rating: 0 | 1 | 2 | 3 | 4 | 5;
+    rating: string;
   };
 }
 
@@ -13,7 +13,7 @@ const Card = ({ item }: CardProps) => {
     <div className="flex flex-col my-4">
       <div className="flex space-x-1 justify-between">
         <h1>{item.name}</h1>
-        <RatingCount ratingCount={item.rating} />
+        <RatingCount ratingCount={parseInt(item.rating)} />
       </div>
       <p>{item.address}</p>
     </div>

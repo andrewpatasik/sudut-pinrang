@@ -4,29 +4,31 @@ import { db } from "@/lib/db";
 import places from "@/models/places";
 
 type Data = {
-  _id: any;
-  name: string;
-  address: string;
-  rating: number;
+  _id?: any;
+  name?: string;
+  address?: string;
+  rating?: number;
 };
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data[]>
+  res: NextApiResponse<Data[] | Object | undefined | unknown>
 ) {
-
   const places = await getAllPlaces();
 
-  res.status(200).json(places as Data[]);
+  if (Array.isArray(places) && places.length < 1)
+    res.status(500).send({ message: "something not right" });
+
+  res.status(200).json(places);
 }
 
 const getAllPlaces = async () => {
   try {
     await db();
-    const Places:Data[] = await places.find({});
+    const Places: Data[] = await places.find({});
 
     return Places;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };

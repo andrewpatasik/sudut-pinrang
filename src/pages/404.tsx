@@ -15,12 +15,12 @@ const NotFound404Page: NextPageWithLayout = () => {
             Halaman Tidak Ditemukan.
           </p>
           <p className="mb-4 text-lg font-light text-gray-500">
-            Maaf kami tidak menemukan halaman yang anda inginkan. Kembali ke
+            Maaf kami tidak menemukan halaman yang dicari. Kembali ke
             Home untuk mencari halaman lain{" "}
           </p>
           <Link
             href="/"
-            className="inline-flex text-white bg-gray-600 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4"
+            className="inline-flex text-white bg-gray-600 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium text-sm px-5 py-2.5 text-center my-4"
           >
             Kembali ke Home
           </Link>

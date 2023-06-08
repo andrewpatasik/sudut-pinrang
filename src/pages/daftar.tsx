@@ -11,11 +11,28 @@ const SubmitPlace = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<SubmitPlaceInputs>();
 
-  const onSubmit: SubmitHandler<SubmitPlaceInputs> = ({ name }) => {
-    console.log(name);
+  const onSubmit: SubmitHandler<SubmitPlaceInputs> = ({
+    name,
+    address,
+    rating,
+  }) => {
+    const addNewPlace = async () => {
+      const res = await fetch("http://localhost:3000/api/places", {
+        method: "POST",
+        body: JSON.stringify({ name, address, rating }),
+      });
+
+      const data = await res.json();
+      return data;
+    };
+
+    addNewPlace().then((res) => {
+      reset();
+    });
   };
 
   return (
@@ -35,6 +52,7 @@ const SubmitPlace = () => {
               type="text"
               {...register("name", { required: true })}
               placeholder="nama tempat/restoran/kedai..."
+              autoComplete="off"
             />
           </div>
 
@@ -47,11 +65,26 @@ const SubmitPlace = () => {
                 required: true,
               })}
               placeholder="jalan jend sudirman..."
+              autoComplete="off"
+            />
+          </div>
+
+          <div>
+            <input
+              className="px-2.5 py-2 border border-black"
+              type="text"
+              {...register("rating", {
+                value: "5",
+                required: true,
+              })}
+              hidden={true}
             />
           </div>
 
           <div className="w-1/4 mt-4">
-            <button className="w-full bg-teal-500 py-2.5">Daftar</button>
+            <button className="w-full bg-teal-500 hover:bg-teal-400 py-2.5">
+              Daftar
+            </button>
           </div>
         </form>
       </section>

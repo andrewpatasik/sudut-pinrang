@@ -1,9 +1,17 @@
-import { Schema, model, models } from 'mongoose';
+import { Schema, model, models } from "mongoose";
 
-const placesSchema = new Schema({
-  name: String,
-  address: String,
-  rating: Number
-})
+interface IPlaces {
+  name: string;
+  address: string;
+  rating: number;
+}
 
-export default models.Places || model('Places', placesSchema);
+const placesSchema = new Schema<IPlaces>({
+  name: { type: String, required: true },
+  address: { type: String, required: true },
+  rating: { type: Number, required: true },
+});
+
+const Places = models.Places || model("Places", placesSchema);
+
+export default Places;

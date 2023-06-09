@@ -21,7 +21,7 @@ const SubmitPlace = () => {
     rating,
   }) => {
     const addNewPlace = async () => {
-      const res = await fetch("http://localhost:3000/api/places", {
+      const res = await fetch("http://localhost:3000/api/places/add", {
         method: "POST",
         body: JSON.stringify({ name, address, rating }),
       });

@@ -15,11 +15,20 @@ export default async function handler(
   res: NextApiResponse<Data[] | Object | undefined | unknown>
 ) {
   await dbConn();
-
   try {
-    const allPlaces: Data[] = await Places.find({});
+    const { name, address, rating } = await JSON.parse(req.body);
 
-    res.status(200).json(allPlaces);
+    const newPlace = new Places({
+      name: name,
+      address: address,
+      rating: rating,
+    });
+
+    await newPlace.save();
+
+    res
+      .status(200)
+      .send({ message: "Tempat favorit mu berhasil ditambahkan!" });
   } catch (error) {
     res.status(400).send({ message: error });
   }

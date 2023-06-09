@@ -1,4 +1,4 @@
 import mongoose from "mongoose";
 
-export const db = async () =>
+export const dbConn = async () =>
   mongoose.connect(process.env.MONGODB_URI as string);

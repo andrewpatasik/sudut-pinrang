@@ -16,7 +16,7 @@ export default function Home({ items }: any) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`http://localhost:3000/api/places`);
   const items = await res.json();
 

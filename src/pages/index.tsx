@@ -17,9 +17,11 @@ export default function Home({ items }: any) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:3000/api/places`);
+  const isProd = process.env.NODE_ENV === 'production';
+  const API_URL = !isProd ? process.env.DEV_URL : process.env.PROD_URL;
+  const res = await fetch(`${API_URL}/places`);
   const items = await res.json();
-
+  
   return {
     props: {
       items,

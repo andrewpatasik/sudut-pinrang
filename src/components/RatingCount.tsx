@@ -10,11 +10,7 @@ const RatingCount = ({ ratingCount }: IRatingCountProps) => {
   const starCount = Array.from(Array(ratingCount).keys());
 
   const renderRatingCount = () => {
-    if (ratingCount === 0) {
-      return starTotal.map((star) => (
-        <StarIconOutline key={star} className="w-4 h-4" />
-      ));
-    }
+
     return starTotal.reduce((collection: any, currentItem, index) => {
       if (currentItem === starCount[currentItem])
         return (collection = [

@@ -1,4 +1,3 @@
-import { ObjectId } from "mongodb";
 import RatingCount from "./RatingCount";
 import Link from "next/link";
 
@@ -13,15 +12,17 @@ interface CardProps {
 
 const Card = ({ item }: CardProps) => {
   return (
-    <Link href={`/places/place/${item._id}`}>
+    <div>
       <div className="flex flex-col my-4">
         <div className="flex space-x-1 justify-between">
-          <h1>{item.name}</h1>
+          <Link href={`/places/place/${item._id}`}>
+            <h1>{item.name}</h1>
+          </Link>
           <RatingCount ratingCount={parseInt(item.rating)} />
         </div>
         <p>{item.address}</p>
       </div>
-    </Link>
+    </div>
   );
 };
 
